@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+
+int X(int n) {
+    // Trường hợp cơ bản: n = 0, X(0) = 1
+    if (n == 0) {
+        return 1;
+    }
+   
+    return X(n-1) + Y(n-1);
+}
+
+
+int Y(int n) {
+   
+    if (n == 0) {
+        return 0;
+    }
+   
+    return 3*X(n-1) + 2*Y(n-1);
+}
+
+int main() {
+    int n;
+    cout << "Nhap n: ";
+    cin >> n;
+    cout << "X(" << n << ") = " << X(n) << endl;
+    cout << "Y(" << n << ") = " << Y(n) << endl;
+
+    return 0;
+}
