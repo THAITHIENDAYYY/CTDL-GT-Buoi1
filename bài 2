@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    }
+    return n * factorial(n-1);
+}
+
+
+float sum(float x, int n) {
+
+    if (n == 1) {
+        return x;
+    }
+   
+    return sum(x, n-1) + pow(x, n) / factorial(n);
+}
+
+int main() {
+    float x;
+    int n;
+    cout << "Nhap x: ";
+    cin >> x;
+    cout << "Nhap n: ";
+    cin >> n;
+    cout << "S(x, n) = " << sum(x, n) << endl;
+
+    return 0;
+}
